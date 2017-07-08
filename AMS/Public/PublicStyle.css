@@ -1,0 +1,16 @@
+﻿.noPaidding
+{
+    padding:0px;
+    margin:0px auto;
+}
+.cssMainContentPlaceHolder
+{
+    width:100%;
+    min-height:100vh;
+}
+.cssAdvertiseContentPlaceHolder
+{
+    width: 100%;  
+    min-height: 100vh;
+    background-color: #EEEEEE
+}
