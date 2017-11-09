@@ -1,0 +1,163 @@
+﻿.noPaidding {
+    margin: 0px auto;
+    padding: 0px;
+}
+
+.headerBackground {
+    background-color: #40434B;
+    min-height: 77px; /*  background-color:#1A1A1A*/
+}
+
+.bodyBackground { background-color: #EEF0F0 }
+
+.cssMainContentPlaceHolder {
+    /*min-height:100vh;*/
+    padding-left: 60px;
+    width: 100%;
+}
+
+.cssAdvertiseContentPlaceHolder { width: 100%; }
+
+.newsEvent {
+    background-color: #E2A4A5;
+    height: 260px;
+    margin: 10px;
+}
+
+.to-letSearchBox {
+    background-color: #0581B5;
+    margin: 20px 10px 20px 10px;
+    min-height: 360px;
+}
+
+.homeAdd {
+    background-image: url(../Images//house-md.png);
+    background-size: 100% 100%;
+    height: 200px;
+    width: calc(100% - 20px);
+}
+
+.sologan {
+    color: #E1FFFF; /*#23282e;*/
+    display: block;
+    font-size: 14px;
+    margin: 18px 10px 10px 50px;
+    text-align: left !important;
+}
+
+.signupBtn {
+    background-color: #F2853C;
+    color: #ffffff;
+    margin-top: 20px;
+    width: 80%;
+}
+
+.loginBtn {
+    background-color: #1A1A1A;
+    border: #F2853C 1px solid;
+    color: #F2853C;
+    float: left;
+    margin-top: 20px;
+    width: 80%;
+}
+
+.signupBtn a:hover {
+    background-color: #F2853C;
+    color: #ffffff;
+    margin-top: 20px;
+    width: 80%;
+}
+
+.heaerName {
+    color: #ffffff;
+    font-size: 18pt;
+}
+
+.layer {
+    color: #ffffff;
+    width: 100%;
+    /*padding:10px;*/
+    /*text-align:center;*/
+}
+
+.layer h3 {
+    font-size: 2.42857rem;
+    font-weight: 300;
+    letter-spacing: 0.05em;
+    padding-left: 45px;
+    text-transform: uppercase;
+}
+
+.layer h3 a { color: #ffffff; }
+
+.layer h3 a:hover {
+    color: #ffffff;
+    text-decoration: none;
+}
+
+.layer ul {
+    font-family: "font-fontello";
+    font-size: 16px;
+    font-size: 16px;
+    line-height: 1.6;
+    list-style: outside none none;
+}
+
+.layer ul li span {
+    display: inline-block;
+    padding-left: 5px;
+}
+
+.layer ul li a {
+    color: #ffffff;
+    display: inline-block;
+    font-size: 18px;
+    padding-left: 35px;
+}
+
+.text-green {
+    color: #55A741;
+    text-decoration: none;
+}
+
+.signupSininPageBg {
+     
+    background-image: url('../Images/bg_2-min.jpg');
+    min-height: 100vh;
+    width: 100%;
+}
+
+div.dropdown-wrapper {
+    width: 100%; /* Sets the width of your dropdown ~/Images/bg_2-min.jpg*/
+}
+
+div.dropdown-wrapper select {
+    -webkit-appearance: none /* Webkit Fix */;
+    background-color: transparent /* This hides the background */;
+    background-image: none;
+    border: none;
+    box-shadow: none;
+    padding: 0.3em 0.5em;
+    width: 100% /* This hides the arrow icon */;
+}
+
+
+/*.layer:before{
+    content:url(Icon/Rent2);
+    resize:inherit;
+}*/
+
+.table-borderless { border-bottom: 0px !important; }
+
+.table-borderless th, .table td { border: 1px !important; }
+
+.fixed-table-borderless-container { border: 0px !important; }
+
+.rfvStyle {
+    background-color: #F9E5E5;
+    color: #DF7BA5;
+    font-family: Avenir, sans-serif;
+    font-size: 10pt;
+    margin-top: 1px;
+    width: 100%;
+}
