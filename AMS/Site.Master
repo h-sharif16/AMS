@@ -171,10 +171,10 @@
                     <div class="col-lg-3 col-md-3 noPaidding" style="min-height: 77px;">
                         <div class="row noPaidding">
                             <div class="col-lg-6 noPaidding">
-                                <a href="Signup.aspx" class="btn btn-default signupBtn"> sign up</a>
+                                <a href="Signup.aspx" class="btn btn-default signupBtn"> Sign up</a>
                             </div>
                             <div class="col-lg-6 noPaidding">
-                                <a href="Signin.aspx" class="btn btn-primary loginBtn"> signs in</a>
+                                <a href="Signin.aspx" class="btn btn-primary loginBtn"> Sign in</a>
                             </div>
                         </div>
                     </div>

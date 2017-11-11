@@ -213,6 +213,46 @@ namespace AMS.Biz
             return objUserDtl;
         }
 
+        public UserDetail uspGetUserBasicInfoByEmailOrMobileNo(User objUser)
+        {
+            objDataAccess = DataAccess.NewDataAccess();
+            objDbCommand = objDataAccess.GetCommand(true, IsolationLevel.ReadCommitted);
+            DbDataReader objDbDataReader = null;
+            UserDetail objUserDtl = null;
+            objDbCommand.AddInParameter("EmailAsUserID", objUser.Email);
+            objDbCommand.AddInParameter("MobileNoAsUserID", objUser.MobileNo);
+           
+
+            try
+            {
+                objDbDataReader = objDataAccess.ExecuteReader(objDbCommand, "ams.uspGetUserBasicInfoByEmailOrMobileNo",
+                    CommandType.StoredProcedure);
+                if (objDbDataReader.HasRows)
+                {
+                    //DocumentBiz.GetApplicantDocuments(applicantId);
+                    while (objDbDataReader.Read())
+                    {
+                        objUserDtl = new UserDetail();
+                        BuildModel(objDbDataReader, objUserDtl);
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Error : " + ex.Message);
+            }
+            finally
+            {
+                if (objDbDataReader != null)
+                {
+                    objDbDataReader.Close();
+                }
+                objDataAccess.Dispose(objDbCommand);
+            }
+
+
+            return objUserDtl;
+        }
         public int ActiveUserByEmail(string email)
         {
             var noOfAffacted = 0;

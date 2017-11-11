@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Signin.aspx.cs" Inherits="AMS.Signin" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="RetrivePasswordLink.aspx.cs" Inherits="AMS.RetrivePasswordLink" %>
 
 <!DOCTYPE html>
 
@@ -107,38 +107,12 @@
                     </div>
 
                 </div>
-
-                <div class="row">
-                    <div class="col-lg-12">
-                        <div class="form-group" style="margin-bottom: 0px">
-                            <asp:Label ID="lblPassword" runat="server" CssClass="label label-info" Text="Password"></asp:Label>
-                            <asp:TextBox ID="txtPassword" runat="server" CssClass="form-control validate[required]" TextMode="Password"/>&nbsp;
-
-
-                            <asp:RequiredFieldValidator ID="rfvPassword" runat="server" Display="Dynamic" ErrorMessage="*" ForeColor="red" ControlToValidate="txtPassword"></asp:RequiredFieldValidator>
-
-                        </div>
-
-                    </div>
-
-
-                </div>
+                 
+                 
                 <div class="row">
                     <div class="col-lg-12">
                         <div class="form-group">
-                            <asp:CheckBox ID="chkRememberMe" runat="server" CssClass="checkbox-inline" Text="Remember Me for 7 days " TextAlign="Right" style="color: #404753; font-family: sans-serif; font-size: 9pt; font-weight: normal;"/>
-
-                        </div>
-
-                    </div>
-
-
-                </div>
-              
-                <div class="row">
-                    <div class="col-lg-12">
-                        <div class="form-group">
-                            <asp:Button ID="btnSignin" CssClass="col-lg-12 btn btn-success" runat="server" Text="sign in" OnClick="btnSignin_Click"/>
+                            <asp:Button ID="btnRetiriveLoginInfo" CssClass="col-lg-12 btn btn-success" runat="server" Text="Retirive Login Info" OnClick="btnRetiriveLoginInfo_Click"/>
 
                         </div>
 
@@ -148,7 +122,7 @@
                     <div class="row" style="margin-top: 20px">
                     <div class="col-lg-12">
                         
-                        <asp:Label ID="lblLoginErrorMessage" runat="server" ForeColor="Red" Text="Invalid Login. Please try again." CssClass="bg-danger"></asp:Label>
+                        <asp:Label ID="lblErrorMessage" runat="server" ForeColor="Red" Text="Unable to find your account." CssClass="bg-primary"></asp:Label>
                        
                        
                         
@@ -156,16 +130,21 @@
                    
                 </div>
                 </asp:Panel>
-                <div class="row" style="margin-top: 20px">
-                    <div class="col-lg-6">
-                        <span  class="text-green" > <a href="Signup.aspx" >create account></a></span>
-
+                
+                <asp:Panel runat="server" ID="panelEmailSmsSuccessNotification" Visible="False">
+                    <div class="row" style="margin-top: 20px">
+                    <div class="col-lg-12">
+                        
+                        <asp:Label ID="lblEmailSmsSuccessNotification" runat="server"   Text="Login info sent. Please check your email/sms notification" CssClass="bg-success"></asp:Label>
+                       
+                       <br/>
+                        <asp:Label ID="lblRedirect" runat="server"   Text="Redirect to Login Page in 4 Seconds" CssClass="bg-success" Font-Names="Arial Narrow" Font-Size="Small" ForeColor="#999999"></asp:Label>
+                        
                     </div>
-                    <div class="col-lg-6" style="text-align: right">
-                      <%--  <span > <a href="ForgotPassword.aspx" ><span><</span>forgot password</a></span>--%>
-                         <span class="glyphicon glyphicon-wrench"></span><a href="RetrivePasswordLink.aspx"> I Forgot My Password!</a>  
-                    </div>
+                   
                 </div>
+                </asp:Panel>
+                
             </div>
             <div class="col-lg-4 col-md-4 col-sm-12">
             </div>
