@@ -1,14 +1,10 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="RetrivePasswordLink.aspx.cs" Inherits="AMS.RetrivePasswordLink" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="PasswordRetriveLink.aspx.cs" Inherits="AMS.PasswordRetriveLink" %>
 
 <!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
-    <meta charset="utf-8"/>
-    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1"/>
-
-    <title>AMS</title>
+   <title>AMS</title>
 
     <!-- Bootstrap -->
     <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet"/>
@@ -51,8 +47,7 @@
     </script>
 </head>
 <body>
-
-<form id="signinForm" runat="server">
+    <form id="signinForm" runat="server">
     <asp:ScriptManager ID="ScriptManager1" runat="server" EnablePageMethods="true"></asp:ScriptManager>
     <div class="container-fluid noPaidding signupSininPageBg">
         <!-- Heaer Div -->
@@ -86,7 +81,7 @@
             <div class="col-lg-4 col-md-4 col-sm-12">
             </div>
             <!-- Div for signup form-->
-            <div class="col-lg-4 col-md-4 col-sm-12" style="background-color: #ffffff; margin: 20px; min-height: 200px; padding: 20px;">
+            <div class="col-lg-4 col-md-4 col-sm-12" style="background-color: #ffffff; margin: 20px;  padding: 20px;">
 
 
                 <div class="row">
@@ -153,6 +148,5 @@
     </div>
 
 </form>
-
 </body>
 </html>

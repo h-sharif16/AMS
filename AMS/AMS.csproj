@@ -112,7 +112,8 @@
     <Content Include="bootstrap\fonts\glyphicons-halflings-regular.woff" />
     <Content Include="bootstrap\fonts\glyphicons-halflings-regular.woff2" />
     <Content Include="Common\Web.config" />
-    <Content Include="RetrivePasswordLink.aspx" />
+    <Content Include="PasswordRetriveLink.aspx" />
+    <Content Include="ResetPassword.aspx" />
     <Content Include="UserActivationByEmail.aspx" />
     <Content Include="Signin.aspx" />
     <Content Include="Signout.aspx" />
@@ -205,13 +206,20 @@
     <Compile Include="Default.aspx.designer.cs">
       <DependentUpon>Default.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="RetrivePasswordLink.aspx.cs">
-      <DependentUpon>RetrivePasswordLink.aspx</DependentUpon>
+    <Compile Include="PasswordRetriveLink.aspx.cs">
+      <DependentUpon>PasswordRetriveLink.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="RetrivePasswordLink.aspx.designer.cs">
-      <DependentUpon>RetrivePasswordLink.aspx</DependentUpon>
+    <Compile Include="PasswordRetriveLink.aspx.designer.cs">
+      <DependentUpon>PasswordRetriveLink.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ResetPassword.aspx.cs">
+      <DependentUpon>ResetPassword.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ResetPassword.aspx.designer.cs">
+      <DependentUpon>ResetPassword.aspx</DependentUpon>
     </Compile>
     <Compile Include="UserActivationByEmail.aspx.cs">
       <DependentUpon>UserActivationByEmail.aspx</DependentUpon>

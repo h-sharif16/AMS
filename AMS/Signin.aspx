@@ -56,7 +56,7 @@
     <asp:ScriptManager ID="ScriptManager1" runat="server" EnablePageMethods="true"></asp:ScriptManager>
     <div class="container-fluid noPaidding signupSininPageBg">
         <!-- Heaer Div -->
-        <div class="container-fluid noPaidding headerBackground" style="min-height: 57px;">
+        <div class="container-fluid noPaidding headerBackground" style="min-height: 57px">
             <div class="row noPaidding" style="line-height: 1.22">
                 <!--Header part-1 for logo, sologan, image,contact info etc-->
                 <div class="col-lg-11 col-md-11 noPaidding" style="min-height: 57px;">
@@ -163,7 +163,7 @@
                     </div>
                     <div class="col-lg-6" style="text-align: right">
                       <%--  <span > <a href="ForgotPassword.aspx" ><span><</span>forgot password</a></span>--%>
-                         <span class="glyphicon glyphicon-wrench"></span><a href="RetrivePasswordLink.aspx"> I Forgot My Password!</a>  
+                         <span class="glyphicon glyphicon-wrench"></span><a href="PasswordRetriveLink.aspx"> I Forgot My Password!</a>  
                     </div>
                 </div>
             </div>

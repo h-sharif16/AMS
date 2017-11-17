@@ -172,6 +172,57 @@ namespace AMS.Biz
             }
         }
 
+
+        public int ResetPassword(UserDetail objUser)
+        {
+            var noOfAffacted = 0;
+            //string applicantCode;
+            //string spName = "";
+            //if (referenceType==EnumBiz.ReferanceType.New.ToString())
+            //{
+            //    spName = "AHL.prInsertApllicant";
+            //}
+            objDataAccess = DataAccess.NewDataAccess();
+            objDbCommand = objDataAccess.GetCommand(true, IsolationLevel.Serializable);
+            //  objDbCommand.AddInOutParameter("ApplicantId", objApplicant.ApplicantId, ParameterDirection.InputOutput, DbType.Int32, 16);
+            objDbCommand.AddInParameter("Email", objUser.Email);
+            objDbCommand.AddInParameter("MobileNo", objUser.MobileNo);
+            
+            objDbCommand.AddInParameter("Password", objUser.Password);
+             
+
+
+            try
+            {
+                 
+             //objDataAccess.ExecuteScalar(objDbCommand, "ams.uspResetPassword", CommandType.StoredProcedure);
+
+
+                if ((int)objDataAccess.ExecuteNonQuery(objDbCommand, "ams.uspResetPassword", CommandType.StoredProcedure) != 0)
+                {
+                    objDbCommand.Transaction.Commit();
+                    return 1; //"Save Successful";
+                }
+                
+
+                else
+                {
+                    objDbCommand.Transaction.Rollback();
+                    return 0;//"Registration Failed";
+                }
+            }
+            catch (Exception ex)
+            {
+                objDbCommand.Transaction.Rollback();
+                throw new Exception("Database Error Occured", ex);
+            }
+            finally
+            {
+                objDataAccess.Dispose(objDbCommand);
+            }
+        }
+
+
         public UserDetail GetUserBasicInfo(User objUser)
         {
             objDataAccess = DataAccess.NewDataAccess();
