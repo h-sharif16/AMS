@@ -20,6 +20,7 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -40,10 +41,22 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ApartmentForAdvartisementBiz.cs" />
+    <Compile Include="ApartmentStatusBiz.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ApartmentBiz.cs" />
+    <Compile Include="ApartmentPhotoBiz.cs" />
+    <Compile Include="PropertyBiz.cs" />
+    <Compile Include="FloorTypeBiz.cs" />
+    <Compile Include="PropertySecurityTypeBiz.cs" />
+    <Compile Include="PropertyFacilityTypeBiz.cs" />
     <Compile Include="UserBiz.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\AMS.Common.Biz\AMS.Common.Biz.csproj">
+      <Project>{45623e86-797e-4397-87dd-8fc9d9d0ea2f}</Project>
+      <Name>AMS.Common.Biz</Name>
+    </ProjectReference>
     <ProjectReference Include="..\AMS.Common.Model\AMS.Common.Model.csproj">
       <Project>{8B1811A0-E073-46E7-AEBD-102AAE42217F}</Project>
       <Name>AMS.Common.Model</Name>

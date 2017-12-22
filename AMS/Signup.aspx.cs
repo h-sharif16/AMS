@@ -113,6 +113,45 @@ namespace AMS
             }
         }
 
+        protected void txtEmail_TextChanged(object sender, EventArgs e)
+        {
+            bool isValueExists = _objUserBiz.CheckAvailabitity(txtEmail.Text.Trim(), "ams.Users", "Email");
+            if (isValueExists)
+            {
+                ltrlEmailAvailable.Text =
+                    "<span style=\"background-color:background-color; color:#DF7BA5;font-size:10pt; font-family: Avenir, sans-serif\">" +
+                    txtEmail.Text.Trim() + " is already Exists</span>";
+            }
+            else
+            {
+                ltrlEmailAvailable.Text =
+                    "<span  style=\"background-color:background-color; color:green;font-size:10pt; font-family: Avenir, sans-serif\">" +
+                    txtEmail.Text.Trim() + "  is available</span>";
+            }
+
+        }
+
+        
+
+        protected void txtMobileNo_TextChanged1(object sender, EventArgs e)
+        {
+            bool isValueExists = _objUserBiz.CheckAvailabitity(txtMobileNo.Text.Trim(), "ams.Users", "MobileNo");
+            if (isValueExists)
+            {
+
+                ltrlMobileNoAvailable.Text =
+                    "<span  style=\"background-color:background-color; color:#DF7BA5;font-size:10pt; font-family: Avenir, sans-serif\">" +
+                    txtMobileNo.Text.Trim() + " is already Exists</span>";
+            }
+            else
+            {
+                ltrlMobileNoAvailable.Text =
+                    "<span style=\"background-color:background-color; color:green;font-size:10pt; font-family: Avenir, sans-serif\">" +
+                    txtMobileNo.Text.Trim() + "  is available</span>";
+            }
+
+        }
+
         //    string expectedToken = (string)Session["token"];
         //{
         //private bool TokenIsValid()

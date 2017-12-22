@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Data;
 using System.Data.Common;
+using System.Runtime.Remoting.Contexts;
+using AMS.Common.Model;
 using AMS.DAL;
 using AMS.Model;
 
@@ -56,6 +58,12 @@ namespace AMS.Biz
                             objUser.LastName = objDataReader["LastName"].ToString();
                         }
                         break;
+                    case "MiddleName":
+                        if (!Convert.IsDBNull(objDataReader["MiddleName"]))
+                        {
+                            objUser.MiddleName = objDataReader["MiddleName"].ToString();
+                        }
+                        break;
                     case "FullName":
                         if (!Convert.IsDBNull(objDataReader["FullName"]))
                         {
@@ -74,7 +82,56 @@ namespace AMS.Biz
                             objUser.RoleName = objDataReader["RoleName"].ToString();
                         }
                         break;
+                    case "NID":
+                        if (!Convert.IsDBNull(objDataReader["NID"]))
+                        {
+                            objUser.NID = objDataReader["NID"].ToString();
+                        }
+                        break;
+                    case "TIN":
+                        if (!Convert.IsDBNull(objDataReader["TIN"]))
+                        {
+                            objUser.TIN = objDataReader["TIN"].ToString();
+                        }
+                        break;
 
+                    case "ProfessionId":
+                        if (!Convert.IsDBNull(objDataReader["ProfessionId"]))
+                        {
+                            objUser.ProfessionId =Convert.ToInt32(objDataReader["ProfessionId"]);
+                        }
+                        break;
+                    case "OthersProfession":
+                        if (!Convert.IsDBNull(objDataReader["OthersProfession"]))
+                        {
+                            objUser.OthersProfession = objDataReader["OthersProfession"].ToString();
+                        }
+                        break;
+
+                    case "ReligionId":
+                        if (!Convert.IsDBNull(objDataReader["ReligionId"]))
+                        {
+                            objUser.ReligionId = Convert.ToInt32(objDataReader["ReligionId"]);
+                        }
+                        break;
+                    case "DateOfBirth":
+                        if (!Convert.IsDBNull(objDataReader["DateOfBirth"]))
+                        {
+                            objUser.DateOfBirth = Convert.ToDateTime(objDataReader["DateOfBirth"]);
+                        }
+                        break;
+                    case "IsShowAsCompanyName":
+                        if (!Convert.IsDBNull(objDataReader["IsShowAsCompanyName"]))
+                        {
+                            objUser.IsShowAsCompanyName = Convert.ToBoolean(objDataReader["IsShowAsCompanyName"]);
+                        }
+                        break;
+                    case "ProfileImageUrl":
+                        if (!Convert.IsDBNull(objDataReader["ProfileImageUrl"]))
+                        {
+                            objUser.ProfileImageUrl = objDataReader["ProfileImageUrl"].ToString();
+                        }
+                        break;
                     case "Status":
                         if (!Convert.IsDBNull(objDataReader["Status"]))
                         {
@@ -384,6 +441,94 @@ namespace AMS.Biz
                 objDataAccess.Dispose(objDbCommand);
             }
             return isVerified;
+        }
+
+        public int SavePersonalGeneralInfo(UserDetail objUserDetail)
+        {
+            var noOfAffacted = 0;
+            //string applicantCode;
+            //string spName = "";
+            //if (referenceType==EnumBiz.ReferanceType.New.ToString())
+            //{
+            //    spName = "AHL.prInsertApllicant";
+            //}
+            objDataAccess = DataAccess.NewDataAccess();
+            objDbCommand = objDataAccess.GetCommand(true, IsolationLevel.Serializable);
+            //  objDbCommand.AddInOutParameter("ApplicantId", objApplicant.ApplicantId, ParameterDirection.InputOutput, DbType.Int32, 16);
+            objDbCommand.AddInParameter("UserID", objUserDetail.UserID);
+            objDbCommand.AddInParameter("Email",        objUserDetail.Email);
+            objDbCommand.AddInParameter("LastName",         objUserDetail.LastName);
+            objDbCommand.AddInParameter("FirstName",         objUserDetail.FirstName);
+            objDbCommand.AddInParameter("MiddleName",         objUserDetail.MiddleName);
+            objDbCommand.AddInParameter("NID",              objUserDetail.NID);
+            objDbCommand.AddInParameter("TIN",              objUserDetail.TIN);
+            objDbCommand.AddInParameter("ProfessionId",             objUserDetail.ProfessionId);
+            objDbCommand.AddInParameter("ReligionId",       objUserDetail.ReligionId);
+            objDbCommand.AddInParameter("OthersProfession",     objUserDetail.OthersProfession);
+            objDbCommand.AddInParameter("DateOfBirth",          objUserDetail.DateOfBirth);
+            objDbCommand.AddInParameter("ProfileImageUrl",      objUserDetail.ProfileImageUrl);
+
+
+
+
+
+            try
+            {
+                noOfAffacted =
+                    (int)objDataAccess.ExecuteScalar(objDbCommand, "ams.uspUpdatePersonalGeneralInformation", CommandType.StoredProcedure);
+
+
+                if (noOfAffacted > 0)
+                {
+                    objDbCommand.Transaction.Commit();
+                    return 1; //"Save Successful";
+                }
+                else if (noOfAffacted == -1)
+                {
+                    objDbCommand.Transaction.Rollback();
+                    return 2; //"User already Exists!";
+                }
+
+                else
+                {
+                    objDbCommand.Transaction.Rollback();
+                    return 0;//"Registration Failed";
+                }
+            }
+            catch (Exception ex)
+            {
+                objDbCommand.Transaction.Rollback();
+                throw new Exception("Database Error Occured", ex);
+            }
+            finally
+            {
+                objDataAccess.Dispose(objDbCommand);
+            }
+        }
+        public bool CheckAvailabitity(string SearchString, string TableName, string TableColumn)
+        {
+            objDataAccess = DataAccess.NewDataAccess();
+            objDbCommand = objDataAccess.GetCommand(true, IsolationLevel.ReadCommitted);
+            var isValueExists = false;
+            var objCheckAvailable = new CheckAvailable();
+            objDbCommand.AddInParameter("SearchString", SearchString);
+            objDbCommand.AddInParameter("TableName", TableName);
+            objDbCommand.AddInParameter("TableColumn", TableColumn);
+            try
+            {
+                isValueExists =
+                    Convert.ToBoolean(objDataAccess.ExecuteScalar(objDbCommand, "ams.uspGetIsAvailable",
+                        CommandType.StoredProcedure));
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Error : " + ex.Message);
+            }
+            finally
+            {
+                objDataAccess.Dispose(objDbCommand);
+            }
+            return isValueExists;
         }
     }
 }

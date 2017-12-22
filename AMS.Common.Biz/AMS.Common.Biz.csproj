@@ -20,6 +20,7 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -41,13 +42,16 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CommonBiz.cs" />
+    <Compile Include="CityBiz.cs" />
+    <Compile Include="ThanaOrAreaBiz.cs" />
+    <Compile Include="StateDivisionBiz.cs" />
+    <Compile Include="CountryBiz.cs" />
+    <Compile Include="PropertyTypeBiz.cs" />
+    <Compile Include="ProfessionBiz.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ReligionBiz.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\AMS.Biz\AMS.Biz.csproj">
-      <Project>{464CFA71-55C4-4ADF-9D76-4491BB1B7CCE}</Project>
-      <Name>AMS.Biz</Name>
-    </ProjectReference>
     <ProjectReference Include="..\AMS.Common.Model\AMS.Common.Model.csproj">
       <Project>{8b1811a0-e073-46e7-aebd-102aae42217f}</Project>
       <Name>AMS.Common.Model</Name>

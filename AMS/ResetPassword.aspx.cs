@@ -31,14 +31,13 @@ namespace AMS
 
         protected void btnReset_Click(object sender, EventArgs e)
         {
-            //  Page.Validate();
+             
             if (Page.IsValid)
             {
 
                 if (!string.IsNullOrWhiteSpace(Request.QueryString["email"]))
                 {
-                    //_objUserDtl=new UserDetail();
-                    //_objUserDtl.Email = Request.QueryString["email"];
+                  
                     bool isVerified = _objUserBiz.IsUserVerified(Request.QueryString["email"]);
                     if (isVerified)
                     {
@@ -94,22 +93,6 @@ namespace AMS
                 return 0;
             }
         }
-
-        //    string expectedToken = (string)Session["token"];
-        //{
-        //private bool TokenIsValid()
-        //}
-        //    hf.Value = token;
-        //    Session["token"] = token;
-        //    string token = System.Guid.NewGuid().ToString();
-        //{
-        //public void createToken()
-        //    if (expectedToken == null)
-        //        return false;
-
-        //    string actualToken = hf.Value;
-
-        //    return expectedToken == actualToken;
-        //}
+ 
     }
 }

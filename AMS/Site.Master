@@ -58,6 +58,7 @@
 <body class="bodyBackground">
 <%-- #D9D9D9--%>
 <form id="form1" runat="server">
+    <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
     <div class="container-fluid noPaidding">
         <!--nav sidebar -->
         <aside>
@@ -76,7 +77,7 @@
 
                         <ul id="menu-content" class="menu-content collapse out">
                             <li>
-                                <a href="#">
+                                <a href="Default.aspx">
                                     <i class="fa fa-dashboard fa-lg"></i> Home<i class="fa fa-home fa-lg btn pull-right" style="margin-top: 5px"></i>
                                 </a>
                             </li>

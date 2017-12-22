@@ -14,10 +14,11 @@ namespace AMS.UserUI
             {
                 if (SessionUtility.SessionUtility.AmsSessionContainer.OBJ_USER_CLASS != null)
                 {
-                    objUserDetail = (UserDetail) SessionUtility.SessionUtility.AmsSessionContainer.OBJ_USER_CLASS;
+                    objUserDetail = (UserDetail)SessionUtility.SessionUtility.AmsSessionContainer.OBJ_USER_CLASS;
                     lblUserName.Text = objUserDetail.FullName;
 
                     lblUserType.Text = objUserDetail.RoleName;
+                    profileImage.ImageUrl = objUserDetail.ProfileImageUrl;
                 }
             }
         }

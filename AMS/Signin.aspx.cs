@@ -22,7 +22,7 @@ namespace AMS
             //Public/Signin.aspx?ReturnUrl=%2f
             var url = HttpContext.Current.Request.Url.AbsoluteUri;
 
-
+           
             if (HttpContext.Current.Request.Url.AbsolutePath == "~/Signin.aspx?ReturnUrl=%2f")
             {
                 Response.Redirect("~/Signin.aspx");
@@ -32,6 +32,8 @@ namespace AMS
                 panelLoginErrorMessage.Visible = false;
             }
         }
+
+        
 
         protected void btnSignin_Click(object sender, EventArgs e)
         {

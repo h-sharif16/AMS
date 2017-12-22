@@ -21,7 +21,7 @@
     <![endif]-->  
      <%--hasan sharif--%>
     <script src="AmsScript/jquery-3.2.1.js"></script>
-    <script type="text/javascript">
+    <%--<script type="text/javascript">
         function IsEmailOrMobileNOInpute(source, args) {
 
             if (args.Value
@@ -40,7 +40,7 @@
 
                 $("#<%= txtEmail.ClientID %>")
                     .blur(function() {
-
+                         
                         var searchString = $(this).val();
                         //alert(searchString);
                         if (searchString.length >= 3) {
@@ -129,7 +129,7 @@
         $(function() {
             $(".Validators").Float();
         });
-    </script>
+    </script>--%>
 
 </head>
 <body>
@@ -222,10 +222,11 @@
                             <asp:UpdatePanel runat="server" ID="emailUpdatepanel">
                                 <ContentTemplate>
                                     <asp:Label ID="lblEMail" runat="server" CssClass="label label-info" Text="Email"></asp:Label>
-                                    <asp:TextBox ID="txtEmail" runat="server" CssClass="form-control"/>
-                                    <div id="ajaxEmailOutput"></div>
+                                    <asp:TextBox ID="txtEmail" runat="server" CssClass="form-control" AutoPostBack="True" OnTextChanged="txtEmail_TextChanged"/>
+                                   <%-- <div id="ajaxEmailOutput"></div>--%>
+                                    <asp:Literal runat="server" ID="ltrlEmailAvailable"></asp:Literal>
                                     <div class="rfvStyle">
-
+                                        
                                         <asp:RegularExpressionValidator ID="refvEmail" runat="server" Display="Dynamic" ErrorMessage="Invalid Email" ControlToValidate="txtEmail" ValidationExpression="\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*"></asp:RegularExpressionValidator>
                                     </div>
                                 </ContentTemplate>
@@ -236,9 +237,10 @@
                     <div class="col-lg-6">
                         <div class="form-group">
                             <asp:Label ID="lblMobileNo" runat="server" CssClass="label label-info" Text="Mobile Number"></asp:Label>
-                            <asp:TextBox ID="txtMobileNo" runat="server" CssClass="form-control" MaxLength="11"/>
-                            <div id="ajaxMobileOutput"></div>
+                            <asp:TextBox ID="txtMobileNo" runat="server" CssClass="form-control" MaxLength="11" AutoPostBack="True" OnTextChanged="txtMobileNo_TextChanged1"/>
+                             <asp:Literal runat="server" ID="ltrlMobileNoAvailable"></asp:Literal>
                             <div class="rfvStyle">
+                                
                                 <asp:RegularExpressionValidator ID="refvMobileNo" runat="server"
                                                                 ControlToValidate="txtMobileNo" ErrorMessage="Mobile Number is not valid."
                                                                 ValidationExpression="[0-9]{11}" Display="Dynamic">

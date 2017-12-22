@@ -20,7 +20,7 @@
 
 .newsEvent {
     background-color: #E2A4A5;
-    height: 260px;
+    min-height: 260px;
     margin: 10px;
 }
 
@@ -36,7 +36,19 @@
     height: 200px;
     width: calc(100% - 20px);
 }
-
+.label-info {
+  display: inline;
+  padding: .2em .6em .3em;
+  font-size: 75%;
+  font-weight: 600;
+            background-color: #5BC0DE;
+  line-height: 1;
+  color: #fff;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: baseline;
+  border-radius: .25em;
+}
 .sologan {
     color: #E1FFFF; /*#23282e;*/
     display: block;
