@@ -530,5 +530,46 @@ namespace AMS.Biz
             }
             return isValueExists;
         }
+
+        public UserDetail GetLandloardEmail(string landlordEmail)
+        {
+            objDataAccess = DataAccess.NewDataAccess();
+            objDbCommand = objDataAccess.GetCommand(true, IsolationLevel.ReadCommitted);
+            DbDataReader objDbDataReader = null;
+            UserDetail objUserDtl = null;
+            objDbCommand.AddInParameter("LandloardId", landlordEmail);
+            
+
+
+            try
+            {
+                objDbDataReader = objDataAccess.ExecuteReader(objDbCommand, "ams.uspGetLandloardEmail",
+                    CommandType.StoredProcedure);
+                if (objDbDataReader.HasRows)
+                {
+                    //DocumentBiz.GetApplicantDocuments(applicantId);
+                    while (objDbDataReader.Read())
+                    {
+                        objUserDtl = new UserDetail();
+                        BuildModel(objDbDataReader, objUserDtl);
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Error : " + ex.Message);
+            }
+            finally
+            {
+                if (objDbDataReader != null)
+                {
+                    objDbDataReader.Close();
+                }
+                objDataAccess.Dispose(objDbCommand);
+            }
+
+
+            return objUserDtl;
+        }
     }
 }

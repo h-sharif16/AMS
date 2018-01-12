@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="AMS.Notification.Model.Notification">
+    <Position X="7.5" Y="4" Width="1.5" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="AMS.Notification.Model.NotificationClassification">
+    <Position X="4" Y="4" Width="1.5" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="AMS.Notification.Model.NotificationMessages">
+    <Position X="5.75" Y="1.5" Width="1.5" />
+    <InheritanceLine Type="AMS.Notification.Model.NotificationClassification" ManuallyRouted="true">
+      <Path>
+        <Point X="4.75" Y="4" />
+        <Point X="4.75" Y="2.727" />
+        <Point X="5.75" Y="2.727" />
+      </Path>
+    </InheritanceLine>
+    <TypeIdentifier />
+  </Class>
+  <Class Name="AMS.Notification.Model.SmtpCredentials">
+    <Position X="7.75" Y="1.5" Width="1.5" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="AMS.Notification.Biz.NotificationBiz">
+    <Position X="9.25" Y="4.75" Width="1.5" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="AMS.Notification.Biz.SmtpCredentialsBiz">
+    <Position X="9.5" Y="1.5" Width="1.5" />
+    <TypeIdentifier />
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

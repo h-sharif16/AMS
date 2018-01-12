@@ -4,6 +4,24 @@
         .lblId{background-color: #E6E6E6; width: 100%}
         
         .lblName{ font-size: 11pt; color: #333333;font-weight: bold}
+        .hylSendVisitReq {
+            font-size: 11pt;
+            color: #ffffff;
+            text-decoration: none;
+            padding: 5px;
+        }
+        .hylSendVisitReq a:link {
+            color: #ffffff;
+          
+        }
+        .hylSendVisitReq a:hover {
+            color: Red;
+            
+        }
+        .hylSendVisitReq a:visited {
+            color: #696969;
+            
+        }
     </style>
      <div class="row">
          <div class="col-lg-2"></div>
@@ -78,7 +96,7 @@
             </div>
               <div class="row" style="color: #ffffff; background-color: #006400; font-size: 11pt;;min-height: 45px">
                 <div class="col-lg-10" >
-                    <asp:HyperLink ID="hylSendVisitReq" class="col-lg-12 btn"  runat="server" style="text-decoration: none" BorderStyle="None">Send a Visit Request</asp:HyperLink>
+                  <span class="glyphicon glyphicon-hand-right"></span> <asp:HyperLink ID="hylSendVisitReq"    runat="server" CssClass="hylSendVisitReq" BorderStyle="None"> Send a Visit Request</asp:HyperLink> 
                 </div>
             </div>
         </div>

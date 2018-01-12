@@ -234,8 +234,7 @@ namespace AMS.Biz
         {
             var noOfAffacted = 0;
             int apartmentId;
-            PropertyFacilityType objFacilityType;
-            PropertySecurityType objSecurityType;
+            
             //string spName = "";
             //if (referenceType==EnumBiz.ReferanceType.New.ToString())
             //{
@@ -273,7 +272,7 @@ namespace AMS.Biz
             try
             {
                 noOfAffacted = objDataAccess.ExecuteNonQuery(objDbCommand, "ams.uspInsertApartmentDetailInfo", CommandType.StoredProcedure);
-                apartmentId = Convert.ToInt32(objDbCommand.Parameters["@ApartmentId"].Value.ToString());
+             //   apartmentId = Convert.ToInt32(objDbCommand.Parameters["ApartmentId"].Value.ToString());
 
 
 

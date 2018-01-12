@@ -1,0 +1,69 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="AMS.Model.Apartment">
+    <Position X="1.75" Y="7.5" Width="2" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="AMS.Model.ApartmentForAdvartisement">
+    <Position X="1.5" Y="14" Width="2.5" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="AMS.Model.ApartmentPhotos">
+    <Position X="6.25" Y="11.75" Width="1.5" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="AMS.Model.Property">
+    <Position X="5" Y="5.75" Width="1.75" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="AMS.Model.PropertyFacilityType">
+    <Position X="7.25" Y="5.75" Width="1.5" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="AMS.Model.PropertyPhoto">
+    <Position X="7.75" Y="7.75" Width="1.5" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="AMS.Model.PropertySecurityType">
+    <Position X="10.75" Y="4.75" Width="1.5" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="AMS.Model.User">
+    <Position X="5.5" Y="2.25" Width="1.5" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="AMS.Model.UserDetail">
+    <Position X="2" Y="2.75" Width="1.5" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="AMS.Common.Model.BaseModel">
+    <Position X="8.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="AMS.Common.Model.StaticListItem">
+    <Position X="12.25" Y="0.75" Width="1.5" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="AMS.Common.Model.CheckAvailable">
+    <Position X="10.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="AMS.DAL.DataAccess">
+    <Position X="14.5" Y="4.5" Width="1.5" />
+    <TypeIdentifier />
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="AMS.DAL.DbCommandExtension">
+    <Position X="14.5" Y="7.25" Width="1.5" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="AMS.Model.VisitRequest">
+    <Position X="9.25" Y="12.5" Width="2" />
+    <TypeIdentifier />
+  </Class>
+  <Interface Name="AMS.DAL.IDataAccess">
+    <Position X="14.5" Y="1.75" Width="1.5" />
+    <TypeIdentifier />
+  </Interface>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

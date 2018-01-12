@@ -16,6 +16,10 @@
     width: 100%;
 }
 
+.rfvErrorMsg {
+    color: Red;
+    position: absolute;
+}
 .cssAdvertiseContentPlaceHolder { width: 100%; }
 
 .newsEvent {
@@ -24,6 +28,16 @@
     margin: 10px;
 }
 
+.pageHeading {
+    background-color: #6495ED; color: #ffffff; border: 1px #EDF0F5 solid; min-height: 25px; margin: auto; padding-top: 10px;
+}
+.pageContentBg {
+    background-color: #ffffff;margin: auto;min-height: 450px;
+}
+.rowTopMergin {
+    margin-top: 5px;
+    font-family: sans-serif;
+}
 .to-letSearchBox {
     background-color: #0581B5;
     margin: 20px 10px 20px 10px;

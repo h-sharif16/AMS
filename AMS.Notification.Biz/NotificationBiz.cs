@@ -144,6 +144,29 @@ namespace AMS.Notification.Biz
             };
             smtpClient.Send(mailMessage);
         }
+        public void SendEmail(NotificationMessages objMessages, string fromAdress, string toAdress, string messageBody)
+        {
+            SmtpCredentialsBiz objSmtpCredentialsBiz = new SmtpCredentialsBiz();
+            var objEmailDetail = GetEmailDetail(objMessages);
+            var objSmtpCredentials = objSmtpCredentialsBiz.GetSmtpCredentials();
+            var mailMessage = new MailMessage(fromAdress, toAdress)
+            {
+                Subject = objEmailDetail.Subject,
+                IsBodyHtml = true,
+                Body = messageBody
+
+            };
+            var smtpClient = new SmtpClient(objSmtpCredentials.MailServer, objSmtpCredentials.PortNumber)
+            {
+                Credentials = new NetworkCredential
+                {
+                    UserName = objEmailDetail.FromAddress,
+                    Password = objEmailDetail.FromAddressPssword
+                },
+                EnableSsl = false
+            };
+            smtpClient.Send(mailMessage);
+        }
         private NotificationMessages GetEmailDetail(NotificationMessages objMessages)
         {
             objDataAccess = DataAccess.NewDataAccess();
@@ -152,7 +175,7 @@ namespace AMS.Notification.Biz
             NotificationMessages objNotifMessages = null;
             objDbCommand.AddInParameter("NotificationTypeID", objMessages.NotificationTypeID);
             objDbCommand.AddInParameter("ClassificationID", objMessages.ClassificationID);
-
+             
 
             try
             {

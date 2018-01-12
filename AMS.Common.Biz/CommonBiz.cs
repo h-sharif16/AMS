@@ -133,6 +133,42 @@ namespace AMS.Common.Biz
             return objStaticListItemLst;
         }
 
+        public static string GetSingleString(string tableName, string valueColumn, string whereClause )
+        {
+            string value;
+            IDataAccess objDataAccess = DataAccess.NewDataAccess();
+            DbCommand objDbCommand = objDataAccess.GetCommand(true, IsolationLevel.ReadCommitted);
+            DbDataReader objDbDataReader = null;
+            try
+            {
+                objDbCommand.AddInParameter("TableName", tableName);
+                objDbCommand.AddInParameter("WhereClause", whereClause);
+                objDbCommand.AddInParameter("ValueColumn", valueColumn);
+
+                value = (string) objDataAccess.ExecuteScalar(objDbCommand, "uspGetSingleString", CommandType.StoredProcedure);
+                if (!string.IsNullOrEmpty(value))
+                {
+                    return value;
+                }
+                else
+                {
+                    return  null;
+                }
+            }
+
+            catch (Exception ex)
+            {
+                throw new Exception("Error : " + ex.Message);
+            }
+            finally
+            {
+                
+                objDataAccess.Dispose(objDbCommand);
+            }
+
+            
+        }
+
         /// <summary>
         ///  This method helps to fill the dropdown with specific stored procedure and paramter list with value.
         /// </summary>

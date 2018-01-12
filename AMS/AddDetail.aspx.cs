@@ -29,6 +29,7 @@ namespace AMS
                     apartmentId = Convert.ToInt32(Request.QueryString["apId"]);
                     propertyId = Convert.ToInt32(Request.QueryString["ppId"]);
                     GetApartmentImages(landloadId, apartmentId, propertyId);
+                    hylSendVisitReq.NavigateUrl = "SendVisitRequest.aspx?lId=" + landloadId+ "&ppId="+ propertyId.ToString()+ "&apId="+ apartmentId;
                 }
             }
         }

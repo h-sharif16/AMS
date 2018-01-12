@@ -185,7 +185,7 @@
             <div class="container-fluid noPaidding">
                 <!--Div for Content Page-->
                 <div class="row noPaidding">
-                    <div class="col-lg-9 col-md-9 noPaidding" style="background-color: #FFFFFF">
+                    <div class="col-lg-9 col-md-9 noPaidding" style="background-color: #FFFFFF; min-height: 500px">
                         <asp:ContentPlaceHolder ID="MainContentPlaceHolder" runat="server"></asp:ContentPlaceHolder>
                     </div>
                     <div class="col-lg-3 col-md-3 noPaidding">

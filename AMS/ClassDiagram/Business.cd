@@ -1,0 +1,72 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="AMS.Biz.ApartmentBiz">
+    <Position X="5.75" Y="1.5" Width="1.5" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="AMS.Biz.ApartmentForAdvartisementBiz">
+    <Position X="8" Y="1.5" Width="1.5" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="AMS.Biz.ApartmentPhotoBiz">
+    <Position X="5.75" Y="3.5" Width="1.5" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="AMS.Biz.ApartmentStatusBiz">
+    <Position X="8" Y="3.75" Width="1.5" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="AMS.Biz.FloorTypeBiz">
+    <Position X="10" Y="3.25" Width="1.5" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="AMS.Biz.PropertyBiz">
+    <Position X="9.75" Y="1.25" Width="1.5" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="AMS.Biz.PropertyFacilityTypeBiz">
+    <Position X="3.5" Y="1.75" Width="1.5" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="AMS.Biz.PropertySecurityTypeBiz">
+    <Position X="3.5" Y="3.75" Width="1.5" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="AMS.Biz.UserBiz">
+    <Position X="8" Y="5.25" Width="1.5" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="AMS.Biz.VisitRequestBiz">
+    <Position X="5.75" Y="5.5" Width="1.5" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="AMS.Common.Biz.CommonBiz">
+    <Position X="1.5" Y="0.75" Width="1.5" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="AMS.Common.Biz.CountryBiz">
+    <Position X="1.5" Y="3.25" Width="1.5" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="AMS.Common.Biz.ProfessionBiz">
+    <Position X="1.5" Y="4.75" Width="1.5" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="AMS.Common.Biz.PropertyTypeBiz">
+    <Position X="1.25" Y="6.5" Width="1.5" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="AMS.Common.Biz.ReligionBiz">
+    <Position X="1.25" Y="8" Width="1.5" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="AMS.Common.Biz.StateDivisionBiz">
+    <Position X="3.25" Y="7" Width="1.5" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="AMS.Common.Biz.ThanaOrAreaBiz">
+    <Position X="3.25" Y="8.75" Width="1.5" />
+    <TypeIdentifier />
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

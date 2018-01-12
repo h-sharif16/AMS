@@ -2,6 +2,7 @@
 
 namespace AMS.Model
 {
+    [Serializable()]
     public class UserDetail : User
     {
         public int UserDtlID { get; set; }

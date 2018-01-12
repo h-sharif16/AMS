@@ -232,7 +232,7 @@ namespace AMS.Biz
             try
             {
                 noOfAffacted = objDataAccess.ExecuteNonQuery(objDbCommand, "ams.uspInsertPropertyDetailInfo", CommandType.StoredProcedure);
-                propertyId = Convert.ToInt32(objDbCommand.Parameters["@PropertyId"].Value.ToString());
+                propertyId = Convert.ToInt32(objDbCommand.Parameters["PropertyId"].Value.ToString());
 
 
 

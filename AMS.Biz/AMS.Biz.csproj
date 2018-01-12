@@ -51,6 +51,7 @@
     <Compile Include="PropertySecurityTypeBiz.cs" />
     <Compile Include="PropertyFacilityTypeBiz.cs" />
     <Compile Include="UserBiz.cs" />
+    <Compile Include="VisitRequestBiz.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\AMS.Common.Biz\AMS.Common.Biz.csproj">

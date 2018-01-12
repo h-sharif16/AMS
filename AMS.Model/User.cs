@@ -1,7 +1,9 @@
-﻿using AMS.Common.Model;
+﻿using System;
+using AMS.Common.Model;
 
 namespace AMS.Model
 {
+    [Serializable()]
     public class User : BaseModel
     {
         public string UserID { get; set; }
