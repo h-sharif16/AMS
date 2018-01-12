@@ -16,7 +16,7 @@
         }
         .hylSendVisitReq a:hover {
             color: Red;
-            
+                
         }
         .hylSendVisitReq a:visited {
             color: #696969;
